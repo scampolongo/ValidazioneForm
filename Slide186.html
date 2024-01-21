@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Validazione di un Form lato client con javascript</title>
+    <meta charset="UTF-8">
+    <style>
+        .error {
+            border: 1px solid red;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="invio" action="recuperadati" method="post" name="registr">
+
+        <label for="cogno">Cognome:</label><br>
+        <input type="text" id="cogno" name="cognome" value="" size="40" maxlength="40"><br>
+
+        <label for="nom">Nome:</label><br>
+        <input type="text" id="nom" name="nome" value="" size="30" maxlength="30"><br>
+
+        <label for="mat">Matricola:</label><br>
+        <input type="text" id="mat" name="matricola" value="" size="12" maxlength="12"><br><br>
+
+        <label for="reg">Scegli una regione dall'elenco a discesa:</label>
+        <select id="reg" name="regione">
+            <option value="nessuna" selected="select"></option>
+            <option value="valdaosta">Val d’Aosta</option>
+            <option value="piemonte">Piemonte</option>
+            <option value="liguria">Liguria</option>
+            <option value="lombardia">Lombardia</option>
+            <option value="veneto">Veneto</option>
+            <option value="trentino">Trentino Alto Adige</option>
+            <option value="friuli">Friuli Venezia-Giulia</option>
+            <option value="emilia">Emilia-Romagna</option>
+            <option value="toscana">Toscana</option>
+            <option value="marche">Marche</option>
+            <option value="umbria">Umbria</option>
+            <option value="lazio">Lazio</option>
+            <option value="abruzzo">Abruzzo</option>
+            <option value="molise">Molise</option>
+            <option value="campania">Campania</option>
+            <option value="basilicata">Basilicata</option>
+            <option value="puglia">Puglia</option>
+            <option value="calabria">Calabria</option>
+            <option value="sicilia">Sicilia</option>
+            <option value="sardegna">Sardegna</option>
+        </select><br><br>
+
+        <label for="email">Inserisci la tua email:</label><br>
+        <input type="text" id="email" name="email" placeholder="inserisci mail" size="30" maxlength="30"><br><br>
+
+        <label for="te">Telefono:</label><br>
+        <input type="text" id="te" name="tel" size="15" maxlength="15"><br><br>
+
+        <label for="w3">Richieste particolari:</label>
+
+        <textarea id="w3" name="richieste" rows="12" cols="60"></textarea><br><br>
+
+        <input type="submit" value="Invia">
+
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <script>
+
+        document.getElementById("invio").addEventListener("submit", controlla);
+
+        function controlla(event) {
+
+            resetErrorStyles();
+
+            if (document.registr.cognome.value == "" || !isNaN(document.registr.cognome.value)) {
+
+                //alert("Inserire cognome");
+                document.getElementById("cogno").classList.add("error");
+
+            }
+
+            else if (document.registr.nome.value == "" || !isNaN(document.registr.nome.value)) {
+
+                //alert("Inserire nome");
+                document.getElementById("nom").classList.add("error");
+
+            }
+
+            else if (document.registr.matricola.value == "" || isNaN(document.registr.matricola.value)) {
+
+                //alert("Inserire matricola");
+                document.getElementById("mat").classList.add("error");
+
+            }
+
+            else if (document.registr.regione.value == "nessuna") {
+
+                //alert("Selezionare una regione");
+                document.getElementById("reg").classList.add("error");
+
+            }
+
+            else if ((document.registr.email.value == "" || !isNaN(document.registr.email.value)) && (document.registr.tel.value == "" || isNaN(document.registr.tel.value))) {
+
+                //alert("Inserire o l’email o il numero di telefono");
+                document.getElementById("email").classList.add("error");
+                document.getElementById("te").classList.add("error");
+
+            }
+
+            else {
+
+                alert("Dati inseriti correttamente");
+                return;
+
+            }
+
+            event.preventDefault();
+
+        }
+
+        function resetErrorStyles() {
+            let elements = document.getElementsByClassName("error");
+            for (let i = 0; i < elements.length; i++)
+                elements[i].classList.remove("error");
+        }
+
+    </script>
+
+</body>
+
+</html>
