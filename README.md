@@ -19,7 +19,7 @@
 
 - Lato Client (sia Interattiva che Post)
 	Ti permette di non occupare banda
-	MA non mi posso fidare assolutamente SOLO del controllo lato cliente, quindi va fatto anche :arrow_heading_down:
+	MA non mi posso fidare assolutamente SOLO del controllo lato cliente, quindi va fatto anche :arrow_lower_left:
 - Lato Server (solo Post)
 
 # Il dato va controllato
