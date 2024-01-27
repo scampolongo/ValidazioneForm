@@ -1,3 +1,5 @@
+_Questi appunti sono stati scritti il 20/01/2024_
+
 # Validazione Form
 
 ## Fasi della validazione dei dati
