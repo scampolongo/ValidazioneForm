@@ -27,5 +27,4 @@ _Questi appunti sono stati scritti il 20/01/2024_
 # Il dato va controllato
 
 1. Se è stato inserito o meno
-2. Se il tipo di dato inserito è corretto
-	Le  [regex](https://www.computerhope.com/jargon/r/regular-expression.png "regex") effettuano controlli capillari con precisione molto accurata
+2. Se il tipo di dato inserito è corretto (le  [regex](https://www.computerhope.com/jargon/r/regular-expression.png "regex") effettuano controlli capillari con precisione molto accurata)
